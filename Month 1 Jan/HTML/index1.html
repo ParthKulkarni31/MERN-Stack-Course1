@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+    <style>
+        .col-6 {
+            border: 1px solid black;
+        }
+
+        .mobile-responsive {
+            background: red;
+        }
+
+        @media only screen and (max-width : 600px) {
+            .mobile-responsive {
+                background: yellow;
+            }
+        }
+
+        th , td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+            <div class="mobile-responsive">
+              <h3>Media Queries - Mobile Laptop responsive</h3>
+            </div>
+        
+        </div>
+        <div class="col-6">
+         <h3>Media Elements (Images,Audio,Video)</h3>
+         <video width="300" controls>
+            <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4">
+         </video>
+         <br/>
+         <audio controls>
+            <source src="https://media.geeksforgeeks.org/wp-content/uploads/20230524142525/gfg_offline_classes_en.mp3">
+         </audio>
+        </div>
+
+      </div>
+    </div>
+                
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Table</h3>
+                             <table>
+                       <!-- <tr> means row -->
+                                <tr>             
+                                  <th>Name</th>
+                                  <th>Age</th>
+                                  <th>College</th>
+                                </tr>
+                                <tr>
+                                    <td>Parth</td>
+                                    <td>21</td>
+                                    <td>SGM</td>
+                                </tr>
+                                <tr>             
+                                  <th>Name</th>
+                                  <th>Age</th>
+                                  <th>College</th>
+                                </tr>
+                                <tr>
+                                    <td>Anish</td>
+                                    <td>18</td>
+                                    <td>Bakliwal</td>
+                                </tr>
+                                <tr>             
+                                  <th>Name</th>
+                                  <th>Age</th>
+                                  <th>College</th>
+                                </tr>
+                                <tr>
+                                    <td>Piyush</td>
+                                    <td>21</td>
+                                    <td>SGM</td>
+                                </tr>
+                             </table>
+                                
+                    </div>
+            
+                        <div class="col-6">
+                            <h3>Form</h3>
+                            <form>
+                                <input type="text" placeholder="Enter Your Name"/>
+                                <br/>
+                                <br/>
+                                <input type="date"/>
+                                <br/>
+                                <br/>
+                                <input type="checkbox"/>
+                                <br/>
+                                <br/>
+                                <input type="email" placeholder="Enter Your email"/>
+                                <br/>
+                                <br/>
+                                <input type="url" placeholder="Enter url"/>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+           
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

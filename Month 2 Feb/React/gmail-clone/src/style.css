@@ -1,0 +1,31 @@
+/* UNIVERSAL SELECTOR */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: white;
+}
+
+.gmail-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section CSS */
+.gmail-header{
+    display: flex;
+    text-align: center;        /* vertically centre all items */
+    padding: 8px 12px;         /* 8px=top bottom 12px=left nd right */
+    height: 60px;              /* fixed header height */   
+}
+
+.header-search{
+    max-width: 500px;
+    background: #e9eef6;
+    border: 1px solid black;
+    border-radius: 50px;
+}

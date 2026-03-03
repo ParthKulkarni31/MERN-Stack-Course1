@@ -30,3 +30,29 @@ body{
     border: 0px solid black;
     border-radius: 50px;
 }
+
+
+/* Side bar CSS */
+.compose-btn{
+    background: #c2e7ff;
+    border: none !important;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: ba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    color: black !important;
+    text-align: center;
+}
+
+.sidebar{
+    width: 250px;
+    padding: 9px;
+    background: #f8fafd;
+}
+
+.compose-btn:hover{
+    background: #c2e7ff;
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,.3), 0 4px 8px 3px rgba(60,64,67,.15) !important;  /* Larger Box Shadow */
+}
+
+

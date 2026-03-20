@@ -1,97 +1,70 @@
-// // Backend Project
+// Backed Project // Node js  // Express Js // DB - MongoDb  
+// Import Express framework (used to create server and APIs)
+const express = require('express')
 
-// //Node js
-// //Express js                                                                    
-// //DB MongoDB
+// Create express application instance
+const app = express()
 
-// // API list
-// //  1. Create iteam - Get data value from frontend {iteam details} and store into DB
-// // 2. Update iteam - get iteam details from frontend which iteam we need to update
-// // 3. Delete iteam - get iteam details from frontend and on delete this record from database
-// // 4. get ALL Records - get ALL records from DB and show to UI frontend
+// Import CORS library (allows frontend apps to call backend APIs)
+const cors = require('cors')
+const { connectDB } = require('./config/db')
 
-console.log("Hello Node Js project is started")
+// Middleware: convert incoming request data into JSON format
+app.use(express.json())
 
-const express = require('express')          //expres js is framework of node js
-const app = express()                      //app=variable => stores express js
-
-
-const mongoose = require('mongoose')
-
-app.use(express.json())                   //converts all data in json format
-
-mongoose.connect("mongodb://localhost:27017/item-database").then(() => console.log("MongoDB connected")).catch((error) => console.log(error))          //if it get connected then it goes in then and if not it goes in catch
+// Middleware: enable Cross-Origin Resource Sharing
+app.use(cors())
 
 
-const itemsSchema = new mongoose.Schema({            // Schema= database table structure model
-    name: String,                                    // structure of values stored database
-    description: String,
-    sellingPrice: Number,
-})
-
-const Items = new mongoose.model("Items", itemsSchema)
-
-
-//API 1- Create Item
-app.post( "/api/create-item" , async (req , res) =>{
-       try{
-
-        const { name , description , sellingPrice } = req.body
-
-        const saveItem = new Items(
-           { name,
-            description,
-            sellingPrice
-            }
-        )
-          await saveItem.save()
-
-          res.status(201).json( {message : "Item Created" , data : saveItem})
-       } catch (error){
-        console.log(error)
-       }
-} )
+// ----------------------
+// MongoDB Database Connection
+// ----------------------
+connectDB()
 
 
 
-//API 2- Update/Edit
-app.put( "/api/update-item", (req , res) =>{
-  try{
-          
-       } catch (error){
-        console.log(error)
-       }
-} )
+// POST API to create new item
+app.post("/api/create-item", addItem)
 
 
-//API 1- Delete Item
-app.delete("/api/delete-item " , (req , res) =>{
-    try{
-          
-       } catch (error){
-        console.log(error)
-       }
+-
+
+// PUT API used to update existing item
+app.put("/api/update-item",editItem)
+
+
+
+// DELETE API to remove item from database
+app.delete("/api/delete-item/:id",deleteItem)
+
+
+
+
+// GET API to fetch all items from database
+app.get("/api/get-all-item", getAllItems)
+
+
+
+
+// Simple API to check server is running or not
+app.get("/helth", (req, res) => {
+
+    res.status(200).json({
+        message: "Server is Runing"
+    })
+
 })
 
 
-//API 1- GetAll Item
-app.get("/api/get-all-item" , async (req , res) => {
-    try{
-        const items = await Items.find()
 
-        res.status(200).json({ message : "Get All Item List" , data : items})
-          
-       } catch (error){
-        console.log(error)
-       }
-})
 
-//Health API
-app.get("/health", (req, res) => {
-    res.status(200).json({ message: "Server Is Running" })
-})
-//server Start
+// Define port number where server will run
 const PORT = 9090
+
+// Start express server
 app.listen(PORT, () => {
+
+    // Show message when server starts
     console.log('Server Started')
+
 })

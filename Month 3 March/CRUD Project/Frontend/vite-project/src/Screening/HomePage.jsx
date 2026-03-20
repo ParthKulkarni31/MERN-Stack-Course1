@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Importing table component from react bootstrap to display data in tabular format 
 import Table from 'react-bootstrap/Table';
@@ -21,7 +20,7 @@ import { useEffect ,  useState } from 'react';
 // Importing modal component from react bootstrapto show delete confirmation popup     
 import Modal from 'react-bootstrap/Modal';
 
-function App() {                             // js code written below it               
+function HomePage() {                             // js code written below it               
   const [itemName, setItemName] = useState();   // here we created variables
   const [description, setDescription] = useState();
   const [purchasePrice, setPurchasePrice] = useState();

@@ -1,15 +1,17 @@
+const Items = require ('./../models/ItemsModels')
 
-import Items from "./../models/ItemsModels"
+
 const addItem = async () => {
-   try {
+    try {
+         
 
         // Get item data sent from frontend
-        const { name, decription, sellingPrice, purchasePrice, quantity, unit } = req.body
+        const { name, description, sellingPrice, purchasePrice, quantity, unit } = req.body
 
         // Create new item object using model
         const saveItem = new Items({
             name,
-            decription,
+            description,
             sellingPrice,
             purchasePrice,
             quantity,
@@ -25,41 +27,34 @@ const addItem = async () => {
             data: saveItem
         })
 
+        
     } catch (error) {
-
-        // Print error in console
         console.log(error)
-
     }
 }
 
-const getAllItems = async () => {
-      try {
-
-        // Fetch all documents from Items collection
-        const items = await Items.find()
+const getAllItem = async () => {
+    try {
+         const items = await items.find()
 
         // Send data to frontend
         res.status(200).json({
             message: "Get All Item List",
             data: items
         })
-
     } catch (error) {
-
         console.log(error)
-
     }
+
 }
 
 const deleteItem = async () => {
-     try {
-
+    try {
         // Get item ID from URL parameters
         const { id } = req.params
 
         // Find item by ID and delete it
-        const deleteItem = await Items.findByIdAndDelete(id)
+        const deleteItem = await Item.findByIdAndDelete(id)
 
         // Send success response
         res.status(200).json({
@@ -68,24 +63,19 @@ const deleteItem = async () => {
         })
 
     } catch (error) {
-
         console.log(error)
-
     }
+
 }
 
 const editItem = async () => {
     try {
-
-        // Here we will receive item ID and updated data from frontend
+         // Here we will receive item ID and updated data from frontend
         // Then we will update record in database using mongoose update query
-
     } catch (error) {
-
         console.log(error)
-
     }
+
 }
 
-
-module.exports = { addItem , getAllItems , deleteItem , editItem }
+module.exports = { addItem , getAllItem , deleteItem , editItem }

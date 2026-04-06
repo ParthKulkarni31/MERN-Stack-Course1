@@ -31,7 +31,7 @@ const getMyFullName = (data = "No name") => {
 const myName = "Parth Kulkarni"
 getMyFullName(myName)
 
-const test = "Sachin Kulkarni"
+const test = "P Kulkarni"
 getMyFullName(test)
 
 getMyFullName()

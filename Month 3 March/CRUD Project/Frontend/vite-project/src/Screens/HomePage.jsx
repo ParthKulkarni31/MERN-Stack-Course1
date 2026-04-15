@@ -169,7 +169,7 @@ function Homepage() {
         theme="light"
       />
 
-      <h2 className='text-danger text-center my-5'>CRUD </h2>
+      <h2 className='text-danger text-center my-5'>Manage Items </h2>
 
       <div className='container'>
 

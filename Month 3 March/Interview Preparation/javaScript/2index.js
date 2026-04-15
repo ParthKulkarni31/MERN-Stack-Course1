@@ -1,41 +1,41 @@
-// // Javascript
-// // React JS
-// // Node JS
+// Javascript
+// React JS
+// Node JS
 
-// // Synchronous and Asynchronous
-// // Callback
-// // Promises
-// // Async/await
+// Synchronous and Asynchronous
+// Callback
+// Promises
+// Async/await
 
-// // 1. Set time out
+// 1. Set time out
 
-// console.log(1)
-// console.log(11)
+console.log(1)
+console.log(11)
 
-// setTimeout(() => {
-//     console.log(2)
-// }, 1000)
+setTimeout(() => {
+    console.log(2)
+}, 1000)
 
-// console.log(3)
+console.log(3)
 
 
-// // 1. Call Back - asynchronous
+// 1. Call Back - asynchronous
 
 const getData = (callbackFunction) =>{
     console.log("Hello Get Data")
     callbackFunction()
 }
 
-// const callbackFunction =() =>{
-//     console.log("Callback function is called")
-// }
+const callbackFunction =() =>{
+    console.log("Callback function is called")
+}
 
-// getData(callbackFunction)
+getData(callbackFunction)
 
 getData(() => console.log(121212))
 
-// // 2.Promises - asynchronous
-      // // -> resolve  -> pending   -> reject
+// 2.Promises - asynchronous
+      // -> resolve  -> pending   -> reject
 
       const myPromise = new Promise(
         (resolve, reject) => {
@@ -61,6 +61,6 @@ getData(() => console.log(121212))
     // // 3.async/await - asynchronous
 
     const myFunction = () =>{
-        // // API integration
-        // // DB Call -add delete update create from db - await
+        // API integration
+        // DB Call -add delete update create from db - await
     }
